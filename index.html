@@ -30,6 +30,16 @@
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
+
+    <!-- Firebase References -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+
+
+    <!-- Link to Moment.js should go here -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+
 </head>
 
 <body>
@@ -47,7 +57,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading"><i class="fas fa-subway"></i> Current Train Schedule</div>
                         <div class="panel-body">
-                            <table class="table table-sm table-hover" id='employee-table'>
+                            <table class="table table-sm table-hover" id="traintable">
                                 <thead>
                                     <tr>
                                         <th scope="col">Train Name</th>
@@ -90,16 +100,26 @@
 
                             <div class="form-group bmd-form-group">
                                 <!-- manually specified -->
-                                <label for="formGroupExampleInput2" class="bmd-label-floating">Another label</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput2">
+                                <label for="nameInput" class="bmd-label-floating">Train Name</label>
+                                <input type="text" class="form-control" id="nameInput">
                             </div>
                             <div class="form-group bmd-form-group">
                                 <!-- manually specified -->
-                                <label for="formGroupExampleInput2" class="bmd-label-floating">Another label</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput2">
+                                <label for="destinationInput" class="bmd-label-floating">Destination</label>
+                                <input type="text" class="form-control" id="destinationInput">
+                            </div>
+                            <div class="form-group bmd-form-group">
+                                <!-- manually specified -->
+                                <label for="timeInput" class="bmd-label-floating">First Train Time (HH:mm - military time)</label>
+                                <input type="text" class="form-control" id="timeInput">
+                            </div>
+                            <div class="form-group bmd-form-group">
+                                <!-- manually specified -->
+                                <label for="frequencyInput" class="bmd-label-floating">Frequency (min)</label>
+                                <input type="text" class="form-control" id="frequencyInput">
                             </div>
                             <div class="submit">
-                                <button type="button" class="btn btn-raised ">Submit</button>
+                                <button type="button" class="btn btn-raised" id="submitbtn">Submit</button>
                             </div>
                         </form>
                     </div>
@@ -112,7 +132,7 @@
     <button onclick="topFunction()" id="topBtn" title="Go to top"><b>⌃</b></button>
 
     <!-- Linking JavaScript file -->
-    <script type="text/javascript " src="assets/javascript/giphyapp.js "></script>
+    <script type="text/javascript " src="assets/javascript/app.js "></script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

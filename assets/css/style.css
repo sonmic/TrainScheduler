@@ -12,6 +12,10 @@ font-family: 'Open Sans Condensed', sans-serif;
 font-family: 'Dosis', sans-serif;
 font-family: 'Abel', sans-serif;*/
         
+        .form-group {
+            margin-bottom: 0;
+        }
+        
         .cardbox {
             margin-top: 20%;
         }
@@ -23,7 +27,7 @@ font-family: 'Abel', sans-serif;*/
         .card {
             font-family: 'Abel', sans-serif;
             font-size: 20px;
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.9);
             color: grey;
         }
         /* .jumbotron {
@@ -50,22 +54,15 @@ font-family: 'Abel', sans-serif;*/
             text-align: center;
         }
         
-        .title {
-            padding-top: 10%;
+        .headline {
+            font-size: 50px;
+            /* text-align: center; */
+            float: right;
         }
         
-        span.choo,
-        span.headline {
-            margin: auto;
-            color: #fff8ee !important;
-            text-align: center;
-            font-size: 70px;
-            font-family: 'lobster', cursive;
-            text-shadow: 4px 4px #fbb426;
-        }
-        
-        span.choo {
+        .choo {
             font-size: 30px;
+            float: right;
         }
         /* h1 {
                 color: #fff8ee !important;
@@ -83,6 +80,14 @@ font-family: 'Abel', sans-serif;*/
                 background-size: 100% 100%;
             } */
         
+        .title {
+            padding-top: 10%;
+            color: #fff8ee !important;
+            /* text-align: center; */
+            font-family: 'lobster', cursive;
+            text-shadow: 4px 4px #fbb426;
+        }
+        
         body {
             /* Location of the image */
             background-image: url('../images/train.jpg');
@@ -96,11 +101,10 @@ font-family: 'Abel', sans-serif;*/
             background-size: cover;
             /* Set a background color that will be displayed while the background image is loading */
             background-color: #464646;
-            display: inline block;
         }
         
         .panel-heading {
-            background-color: #ffefcf !important;
+            /* background-color: #ffefcf !important; */
         }
         
         .submit {
@@ -109,22 +113,16 @@ font-family: 'Abel', sans-serif;*/
         }
         
         .btn {
-            background-color: #fcecd7 !important;
+            background-color: #ffd37c !important;
             border: 0 none !important;
             color: grey !important;
+            margin-top: 3%;
         }
         
         .btn:hover {
-            background-color: #fff2df !important;
+            background-color: #ffdb92 !important;
         }
         /* Box shadow color */
-        
-        .headline {
-            font-size: 50px;
-            font-family: 'Cinzel Decorative', cursive;
-            text-align: center;
-            margin: auto;
-        }
         
          ::selection {
             background: #fcffff;
