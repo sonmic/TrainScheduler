@@ -2,7 +2,7 @@
 $(document).ready(function($) {
 
     window.setTimeout(function() {
-        $(".card").fadeIn(4000);
+        $(".cardbox").fadeIn(4000);
     }, 300); // 3 seconds
 });
 
@@ -10,9 +10,10 @@ $(document).ready(function($) {
 // $(document).ready(function($) {
 
 //     window.setTimeout(function() {
-//         $(".card").show("slide", { direction: "left" }, 5000);
+//         $("cardbox").show("slide", { direction: "left" }, 5000);
 //     }, 500); // 3 seconds
 // });
+
 
 
 // Your web app's Firebase configuration
@@ -34,6 +35,7 @@ var database = firebase.database();
 $("#submitbtn").on("click", function(event) {
     event.preventDefault();
     console.log(true);
+
     // Grabs user input
     var trainName = $("#nameInput").val().trim();
     var destinationInput = $("#destinationInput").val().trim();
@@ -56,6 +58,8 @@ $("#submitbtn").on("click", function(event) {
     console.log(newTrain.destination);
     console.log(newTrain.time);
     console.log(newTrain.frequency);
+
+
 
     alert("Train successfully added");
 

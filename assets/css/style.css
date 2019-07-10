@@ -17,7 +17,7 @@ font-family: 'Abel', sans-serif;*/
         }
         
         .cardbox {
-            margin-top: 20%;
+            margin-top: 10%;
         }
         
         .innercard {
@@ -27,7 +27,7 @@ font-family: 'Abel', sans-serif;*/
         .card {
             font-family: 'Abel', sans-serif;
             font-size: 20px;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.8);
             color: grey;
         }
         /* .jumbotron {
@@ -164,6 +164,22 @@ font-family: 'Abel', sans-serif;*/
                 margin: auto;
                 text-align: center;
                 font-size: 18px !important;
+                display: block !important;
+            }
+            .card {
+                margin: auto;
+                text-align: center;
+                font-size: 18px !important;
+                display: block !important;
+            }
+            .panel-heading {
+                background-color: #ffefcf !important;
+            }
+            .headline {
+                font-size: 30px;
+            }
+            .choo {
+                font-size: 20px;
             }
         }
         /************************************************************************************
