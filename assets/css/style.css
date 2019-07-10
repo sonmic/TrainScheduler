@@ -105,6 +105,7 @@ font-family: 'Abel', sans-serif;*/
         
         .panel-heading {
             /* background-color: #ffefcf !important; */
+            padding-bottom: 2%;
         }
         
         .submit {
@@ -168,12 +169,15 @@ font-family: 'Abel', sans-serif;*/
         /************************************************************************************
     media query ends
     *************************************************************************************/
+        /* changing color of form input  */
         
         .custom-file-control,
         .form-control,
         .is-focused .custom-file-control,
         .is-focused .form-control {
             background-image: linear-gradient(0deg, #fbb426 2px, rgba(0, 150, 136, 0) 0), linear-gradient(0deg, rgba(0, 0, 0, .26) 1px, transparent 0)!important;
+            /* border-bottom: 1px solid #fbb426 !important; */
+            /* box-shadow: 0 1px 0 0 #fbb426 !important; */
         }
         
         .is-focused [class*=" bmd-label"],

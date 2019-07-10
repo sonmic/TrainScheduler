@@ -65,26 +65,6 @@ database.ref().on("child_added", function(childSnapshot) {
     console.log(firstTrainInput);
     console.log(frequencyInput);
 
-    // Prettify the train time
-    // var trainTimePretty = moment.unix(empStart).format("MM/DD/YYYY");
-
-    // Calculate the next arrival using hardcore math
-    // To calculate next arrival
-    // var nextArrival = moment().diff(moment(empStart, "X"), "months");
-    // console.log(nextArrival);
-
-
-    // var d = new Date();
-    // var curr_hour = d.getHours();
-    // var curr_min = d.getMinutes();
-    // var currentTime = curr_hour + ":" + curr_min;
-    // console.log(currentTime);
-
-    // Calculate minutes away
-    // var minAway;
-    // console.log();
-
-
     ///////////////////////////////////////////////////////////////
 
 
@@ -127,3 +107,25 @@ database.ref().on("child_added", function(childSnapshot) {
     // Append the new row to the table
     $("#traintable > tbody").append(newRow);
 });
+
+
+// scroll btn
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {
+    scrollFunction()
+};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("topBtn").style.display = "block";
+    } else {
+        document.getElementById("topBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
