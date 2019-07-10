@@ -1,3 +1,20 @@
+// Fade in effect
+$(document).ready(function($) {
+
+    window.setTimeout(function() {
+        $(".card").fadeIn(4000);
+    }, 300); // 3 seconds
+});
+
+// slide effect
+// $(document).ready(function($) {
+
+//     window.setTimeout(function() {
+//         $(".card").show("slide", { direction: "left" }, 5000);
+//     }, 500); // 3 seconds
+// });
+
+
 // Your web app's Firebase configuration
 var firebaseConfig = {
     apiKey: "AIzaSyCPd9mQd9gUw_3P-wJQDteENtEccwjj1pA",
