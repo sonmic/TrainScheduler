@@ -181,6 +181,16 @@ font-family: 'Abel', sans-serif;*/
             .choo {
                 font-size: 20px;
             }
+            .bmd-form-group [class*=" bmd-label"],
+            .bmd-form-group [class^=bmd-label] {
+                position: static !important;
+            }
+            .bmd-form-group .custom-file-control,
+            .bmd-form-group .form-control,
+            .bmd-form-group input::placeholder,
+            .bmd-form-group label {
+                line-height: 0 !important;
+            }
         }
         /************************************************************************************
     media query ends
