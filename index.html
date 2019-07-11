@@ -83,22 +83,22 @@
                             <div class="form-group bmd-form-group">
                                 <!-- manually specified -->
                                 <label for="nameInput" class="bmd-label-floating">Train Name</label>
-                                <input type="text" class="form-control" id="nameInput">
+                                <input type="text" class="form-control" id="nameInput" required="required">
                             </div>
                             <div class="form-group bmd-form-group">
                                 <!-- manually specified -->
                                 <label for="destinationInput" class="bmd-label-floating">Destination</label>
-                                <input type="text" class="form-control" id="destinationInput">
+                                <input type="text" class="form-control" id="destinationInput" required="required">
                             </div>
                             <div class="form-group bmd-form-group">
                                 <!-- manually specified -->
                                 <label for="firstTrainInput" class="bmd-label-floating">First Train Time (HH:mm - military time)</label>
-                                <input type="text" class="form-control" id="firstTrainInput" required="required" pattern="\d{2}:?\d{2}" title="Please enter military time">
+                                <input type="text" class="form-control" id="firstTrainInput" required="required" pattern="\d{2}:?\d{2}" title="Example: 07:00">
                             </div>
                             <div class="form-group bmd-form-group">
                                 <!-- manually specified -->
                                 <label for="frequencyInput" class="bmd-label-floating">Frequency (min)</label>
-                                <input type="text" class="form-control" id="frequencyInput">
+                                <input type="text" class="form-control" id="frequencyInput" required="required" pattern="\d+" title="Please enter numbers">
                             </div>
                             <div class="submit">
                                 <button type="button" class="btn btn-raised" id="submitbtn">Submit</button>
