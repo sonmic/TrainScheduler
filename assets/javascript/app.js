@@ -61,7 +61,7 @@ $("#submitbtn").on("click", function(event) {
 
 
 
-    alert("Train successfully added");
+    // alert("Train successfully added");
 
     // Clears all of the text-boxes
     $("#nameInput").val("");
@@ -174,3 +174,21 @@ function display_ct() {
     document.getElementById('ct').innerHTML = x;
     display_c();
 }
+
+
+
+// Popup animation
+(function($) {
+    $('#submitbtn').bind('click', function(e) {
+        e.preventDefault();
+        $('#popup').bPopup({
+            appendTo: 'form',
+            zIndex: 2,
+            easing: 'easeOutBack', //uses jQuery easing plugin
+            speed: 450,
+            transition: 'slideDown',
+            opacity: 0.5,
+            modalColor: '#fff8ed'
+        });
+    });
+})(jQuery);
