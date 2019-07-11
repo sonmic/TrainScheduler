@@ -16,7 +16,7 @@ if (!HTMLFormElement.prototype.reportValidity) {
 $(document).ready(function($) {
 
     window.setTimeout(function() {
-        $(".cardbox").fadeIn(4000);
+        $(".cardbox").fadeIn(2000);
     }, 300); // 3 seconds
 
 
