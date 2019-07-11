@@ -56,7 +56,7 @@
             <div class="card">
 
                 <div class="innercard">
-                    <!-- Current Employees-->
+                    <!-- Current train time table-->
                     <div class="panel panel-default">
                         <div class="panel-heading"><i class="fas fa-subway"></i> Current Train Schedule</div>
                         <div class="panel-body">
@@ -93,7 +93,7 @@
                             <div class="form-group bmd-form-group">
                                 <!-- manually specified -->
                                 <label for="firstTrainInput" class="bmd-label-floating">First Train Time (HH:mm - military time)</label>
-                                <input type="text" class="form-control" id="firstTrainInput">
+                                <input type="text" class="form-control" id="firstTrainInput" required="required" pattern="\d{2}:?\d{2}" title="Please enter military time">
                             </div>
                             <div class="form-group bmd-form-group">
                                 <!-- manually specified -->
@@ -113,10 +113,10 @@
     </div>
     <button onclick="topFunction()" id="topBtn" title="Go to top"><b>⌃</b></button>
 
-    <!-- Linking JavaScript file -->
-    <script type="text/javascript " src="assets/javascript/app.js "></script>
     <!-- Linking Popup JavaScript file -->
-    <script type="text/javascript " src="assets/javascript/bPopup.js "></script>
+    <script type="text/javascript " src="assets/javascript/bPopup.js"></script>
+    <!-- Linking JavaScript file -->
+    <script type="text/javascript " src="assets/javascript/app.js"></script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
