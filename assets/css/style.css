@@ -108,6 +108,11 @@ font-family: 'Abel', sans-serif;*/
             padding-bottom: 2%;
         }
         
+        .addtime {
+            padding-top: 2%;
+            padding-bottom: 0% !important;
+        }
+        
         .submit {
             margin: auto;
             text-align: center;
@@ -154,6 +159,10 @@ font-family: 'Abel', sans-serif;*/
         
         #topBtn:hover {
             background-color: #fce1ab;
+        }
+        
+        #popup {
+            display: none;
         }
         /************************************************************************************
     smaller than 640

@@ -50,7 +50,7 @@ $("#submitbtn").on("click", function(event) {
         frequency: frequencyInput
     };
 
-    // Uploads employee data to the database
+    // Uploads user input data to the database
     database.ref().push(newTrain);
 
     // Logs everything to console
@@ -75,10 +75,10 @@ database.ref().on("child_added", function(childSnapshot) {
     console.log(childSnapshot.val());
 
     // Store everything into a variable.
-    var trainName = childSnapshot.val().name;
-    var destinationInput = childSnapshot.val().destination;
-    var firstTrainInput = childSnapshot.val().time;
-    var frequencyInput = childSnapshot.val().frequency;
+    let trainName = childSnapshot.val().name;
+    let destinationInput = childSnapshot.val().destination;
+    let firstTrainInput = childSnapshot.val().time;
+    let frequencyInput = childSnapshot.val().frequency;
 
     // Train Info
     console.log(trainName);
@@ -91,39 +91,51 @@ database.ref().on("child_added", function(childSnapshot) {
 
     console.log(firstTrainInput);
     // First Time (pushed back 1 year to make sure it comes before current time)
-    var firstTimeConverted = moment(firstTrainInput, "HH:mm").subtract(1, "years");;
+    let firstTimeConverted = moment(firstTrainInput, "HH:mm").subtract(1, "years");;
     console.log(firstTimeConverted);
 
-    // Current Time
-    var currentTime = moment();
-    console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
-
-    // Difference between the times
-    var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
-    console.log("DIFFERENCE IN TIME: " + diffTime);
-
-    // Time apart (remainder)
-    var tRemainder = diffTime % frequencyInput;
-    console.log(tRemainder);
-
-    // Minute Until Train
-    var minAway = frequencyInput - tRemainder;
-    console.log("MINUTES AWAY: " + minAway);
-
-    // Next Train
-    var nextArrival = moment().add(minAway, "minutes");
-    console.log("ARRIVAL TIME: " + moment(nextArrival).format("hh:mm"));
-
     ///////////////////////////////////////////////////////////////
+
+    let nextArrivalCell = $("<td>");
+    let minAwayCell = $("<td>");
+
+    function updateTimes() {
+        // Current Time
+        let currentTime = moment();
+        console.log("CURRENT TIME: " + currentTime.format("hh:mm"));
+
+        // Difference between the times
+        let diffTime = currentTime.diff(firstTimeConverted, "minutes");
+        console.log("DIFFERENCE IN TIME: " + diffTime);
+
+        // Time apart (remainder)
+        let tRemainder = diffTime % frequencyInput;
+        console.log(tRemainder);
+
+        // Minute Until Train
+        let minAway = frequencyInput - tRemainder;
+        console.log("MINUTES AWAY: " + minAway);
+
+        // Next Train
+        let nextArrival = currentTime.add(minAway, "minutes");
+        console.log("ARRIVAL TIME: " + nextArrival.format("hh:mm"));
+
+        nextArrivalCell.text(nextArrival.format("hh:mm"));
+        minAwayCell.text(minAway);
+    }
+    updateTimes();
 
     // Create the new row
     var newRow = $("<tr>").append(
         $("<td>").text(trainName),
         $("<td>").text(destinationInput),
         $("<td>").text(frequencyInput),
-        $("<td>").text(moment(nextArrival).format("hh:mm")),
-        $("<td>").text(minAway),
+        nextArrivalCell,
+        minAwayCell
     );
+
+    // time auto refresh
+    setInterval(updateTimes, 60 * 1000);
 
     // Append the new row to the table
     $("#traintable > tbody").append(newRow);
@@ -149,4 +161,16 @@ function scrollFunction() {
 function topFunction() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
+}
+
+// dinamic time update
+function display_c() {
+    var refresh = 1000; // Refresh rate in milli seconds
+    mytime = setTimeout('display_ct()', refresh)
+}
+
+function display_ct() {
+    var x = new Date()
+    document.getElementById('ct').innerHTML = x;
+    display_c();
 }
